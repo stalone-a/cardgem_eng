@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию административных разделов
+Disallow: /admin/
+Disallow: /private/
+Disallow: /checkout.html
+
+# Разрешаем доступ к основным разделам
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /products/
+Allow: /catalog.html
+Allow: /faq.html
+Allow: /guarantees.html
+
+# Указываем расположение sitemap
+Sitemap: https://cardgem.shop/sitemap.xml
+
+# Время ожидания между запросами (в секундах)
+Crawl-delay: 1

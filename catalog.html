@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' https: data:; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://api.coingecko.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <title>Browse Bank Cards, Accounts, and Digital Products | CardGem</title>
+    <meta name="description"
+        content="Browse bank cards, e-wallets, prepaid cards, and accounts at CardGem. Find digital products with clear pricing and fast delivery.">
+    <meta name="keywords"
+        content="bank cards, prepaid cards, e-wallets, accounts, CardGem catalog">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CardGem">
+    <link rel="canonical" href="https://cardgem.shop/catalog.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cardgem.shop/catalog.html">
+    <meta property="og:title" content="Browse Bank Cards, Accounts, and Digital Products | CardGem">
+    <meta property="og:description"
+        content="Browse bank cards, e-wallets, prepaid cards, and accounts at CardGem.">
+    <meta property="og:image" content="https://cardgem.shop/images/zastavka.webp">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="CardGem">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cardgem.shop/catalog.html">
+    <meta name="twitter:title" content="Browse Bank Cards, Accounts, and Digital Products | CardGem">
+    <meta name="twitter:description"
+        content="Browse bank cards, e-wallets, prepaid cards, and accounts at CardGem.">
+    <meta name="twitter:image" content="https://cardgem.shop/images/zastavka.webp">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/fav/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/fav/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/fav/android-chrome-512x512.png">
+    <link rel="manifest" href="/images/fav/site.webmanifest">
+    <link rel="shortcut icon" href="/images/fav/favicon.ico">
+    <meta name="msapplication-TileColor" content="#212121">
+    <meta name="theme-color" content="#212121">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <script src="js/theme.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cardgem.shop/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Catalog",
+        "item": "https://cardgem.shop/catalog.html"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CardGem Catalog",
+      "url": "https://cardgem.shop/catalog.html",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://cardgem.shop/catalog.html?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <header class="header-bg">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler order-first d-lg-none" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand mx-auto" href="index.html">
+                    <img src="images/logo.webp" alt="CardGem - verified bank cards and accounts"
+                        height="40" class="d-inline-block align-top">
+                </a>
+
+                <button class="btn btn-outline-light d-lg-none mobile-search-btn" type="button">
+                    <i class="bi bi-search"></i>
+                </button>
+
+                <div class="mobile-search-overlay d-none">
+                    <div class="mobile-search-container">
+                        <button class="btn btn-outline-light mobile-search-close" type="button">
+                            <i class="bi bi-arrow-left"></i>
+                        </button>
+                        <div class="input-group flex-grow-1">
+                            <div class="input-wrapper">
+                                <input type="text" class="form-control mobile-search-input search-input"
+                                    placeholder="Search..." id="catalogMobileSearchInput">
+                                <button class="clear-input-btn" type="button"
+                                    onclick="clearSearch('catalogMobileSearchInput')">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-light search-btn" type="button" onclick="performSearch()">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <button class="mobile-menu-close d-lg-none" type="button">
+                        <i class="bi bi-x"></i>
+                    </button>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Catalog
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="catalog.html?category=all">All Products</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=debit">Bank Cards</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=bankaccounts">Bank Accounts</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=prepaid">Prepaid Cards</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=ewallet">E-Wallets</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=accounts">Accounts</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=vpnproxy">Software</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="guarantees.html">Guarantees</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <div class="input-group search-group me-3 d-none d-md-flex">
+                            <div class="input-wrapper">
+                                <input type="text" class="form-control search-input" placeholder="Search..."
+                                    id="catalogDesktopSearchInput">
+                                <button class="clear-input-btn" type="button"
+                                    onclick="clearSearch('catalogDesktopSearchInput')">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-light search-btn" type="button" onclick="performSearch()">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+
+                        <div class="btn-group-mobile d-lg-none d-flex">
+                            <a href="#" class="btn btn-outline-light position-relative btn-favorites"
+                                onclick="openFavoritesModal(); return false;" aria-label="Favorites" title="Favorites">
+                                <i class="bi bi-heart"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </a>
+
+                            <a href="#" class="btn btn-outline-light position-relative btn-cart"
+                                onclick="openCartModal(); return false;" aria-label="Cart" title="Cart">
+                                <i class="bi bi-cart"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </a>
+                            <button class="theme-toggle ms-2" type="button">
+                                <i class="bi bi-sun"></i>
+                            </button>
+                        </div>
+
+                        <a href="#"
+                            class="btn btn-outline-light me-2 position-relative btn-favorites d-none d-lg-inline-flex"
+                            onclick="openFavoritesModal(); return false;" aria-label="Favorites" title="Favorites">
+                            <i class="bi bi-heart"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+
+                        <a href="#" class="btn btn-outline-light position-relative btn-cart d-none d-lg-inline-flex"
+                            onclick="openCartModal(); return false;" aria-label="Cart" title="Cart">
+                            <i class="bi bi-cart"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                        <button class="theme-toggle ms-2 d-none d-lg-inline-flex" type="button">
+                            <i class="bi bi-sun"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-overlay d-lg-none"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-bg py-4">
+        <div class="container">
+            <header class="catalog-header d-flex align-items-center justify-content-between">
+                <div>
+                    <h1 class="catalog-title" id="categoryTitle">All Products</h1>
+                </div>
+                <div>
+                    <label for="sortSelect" class="visually-hidden">Sort products</label>
+                    <select class="form-select catalog-sort" id="sortSelect" aria-label="Sort products">
+                        <option value="default">Featured</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                    </select>
+                </div>
+            </header>
+
+            <section class="products-grid" id="productsGrid" itemscope itemtype="https://schema.org/ItemList">
+
+            </section>
+
+
+            <div class="text-center mb-4" id="loadMoreContainer" style="display: none;">
+                <button class="btn btn-primary" id="loadMoreBtn"
+                    style="background: transparent; border: none;">Load More</button>
+            </div>
+
+
+            <nav class="mt-4" aria-label="Catalog pages">
+                <ul class="pagination justify-content-center" id="pagination">
+
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+
+    <footer class="footer-bg text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>CardGem</h5>
+                    <p>Your digital essentials, all in one place.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="mb-2">
+                        <a href="faq.html" class="text-light text-decoration-none me-3">FAQ</a>
+                        <a href="guarantees.html" class="text-light text-decoration-none me-3">Guarantees</a>
+                        <a href="mailto:CardGem.support@protonmail.com" class="text-light text-decoration-none">CardGem.support@protonmail.com</a>
+                    </div>
+                    <p>&copy; 2022 CardGem</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="favoritesModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-heart-fill text-danger me-2"></i>
+                    Favorites
+                </h5>
+                <button type="button" class="modal-close" onclick="closeFavoritesModal()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="favoritesContent">
+                    <div class="empty-state">
+                        <i class="bi bi-heart text-muted"></i>
+                        <p>Your favorites list is empty</p>
+                        <small class="text-muted">Save products here so you can find them later.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="cartModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-cart-fill text-primary me-2"></i>
+                    Cart
+                </h5>
+                <button type="button" class="modal-close" onclick="closeCartModal()" aria-label="Close cart">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="cartContent">
+                    <div class="empty-state">
+                        <i class="bi bi-cart text-muted"></i>
+                        <p>Your cart is empty</p>
+                        <small class="text-muted">Add products to your cart to get started.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">$0</span></strong>
+                </div>
+                <button type="button" class="btn btn-primary btn-checkout" disabled>
+                    Continue to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+
+</html>

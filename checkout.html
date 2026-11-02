@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' https: data:; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://api.coingecko.com https://api.binance.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <title>Checkout | CardGem</title>
+    <meta name="description"
+        content="Review your order and complete checkout at CardGem.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="CardGem">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/fav/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/fav/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/fav/android-chrome-512x512.png">
+    <link rel="manifest" href="/images/fav/site.webmanifest">
+    <link rel="shortcut icon" href="/images/fav/favicon.ico">
+    <meta name="msapplication-TileColor" content="#212121">
+    <meta name="theme-color" content="#212121">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <script src="js/theme.js"></script>
+</head>
+
+<body>
+
+    <header class="header-bg">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+
+                <button class="navbar-toggler order-first d-lg-none" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <a class="navbar-brand mx-auto" href="index.html">
+                    <img src="images/logo.webp" alt="CardGem - verified bank cards and accounts"
+                        height="40" class="d-inline-block align-top">
+                </a>
+
+
+                <button class="btn btn-outline-light d-lg-none mobile-search-btn" type="button">
+                    <i class="bi bi-search"></i>
+                </button>
+
+
+                <div class="mobile-search-overlay d-none">
+                    <div class="mobile-search-container">
+                        <button class="btn btn-outline-light mobile-search-close" type="button">
+                            <i class="bi bi-arrow-left"></i>
+                        </button>
+                        <div class="input-group flex-grow-1">
+                            <div class="input-wrapper">
+                                <input type="text" class="form-control mobile-search-input" id="mobileSearchInput"
+                                    placeholder="Search...">
+                                <div class="search-results-mobile" id="searchResultsMobile"></div>
+                                <button class="clear-input-btn" type="button"
+                                    onclick="clearSearch('mobileSearchInput')">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-light" type="button" onclick="performSearch()">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+
+                    <button class="mobile-menu-close d-lg-none" type="button">
+                        <i class="bi bi-x"></i>
+                    </button>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Catalog
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="catalog.html?category=all">All Products</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=debit">Bank Cards</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=bankaccounts">Bank Accounts</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=prepaid">Prepaid Cards</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=ewallet">E-Wallets</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=accounts">Accounts</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?category=vpnproxy">Software</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="guarantees.html">Guarantees</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <div class="input-group search-group me-3 d-none d-md-flex">
+                            <div class="input-wrapper">
+                                <input type="text" class="form-control" id="desktopSearchInput"
+                                    placeholder="Search...">
+                                <div class="search-results" id="searchResults"></div>
+                                <button class="clear-input-btn" type="button"
+                                    onclick="clearSearch('desktopSearchInput')">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-light" type="button" onclick="performSearch()">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+
+
+                        <div class="btn-group-mobile d-lg-none d-flex">
+                            <a href="#" class="btn btn-outline-light position-relative btn-favorites"
+                                onclick="openFavoritesModal(); return false;" aria-label="Favorites" title="Favorites">
+                                <i class="bi bi-heart"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    <span class="favorites-count">0</span>
+                                </span>
+                            </a>
+
+                            <a href="#" class="btn btn-outline-light position-relative btn-cart"
+                                onclick="openCartModal(); return false;" aria-label="Cart" title="Cart">
+                                <i class="bi bi-cart"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    <span class="cart-count">0</span>
+                                </span>
+                            </a>
+                            <button class="theme-toggle ms-2" type="button">
+                                <i class="bi bi-sun"></i>
+                            </button>
+                        </div>
+
+
+                        <a href="#"
+                            class="btn btn-outline-light me-2 position-relative btn-favorites d-none d-lg-inline-flex"
+                            onclick="openFavoritesModal(); return false;" aria-label="Favorites" title="Favorites">
+                            <i class="bi bi-heart"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <span class="favorites-count">0</span>
+                            </span>
+                        </a>
+
+                        <a href="#" class="btn btn-outline-light position-relative btn-cart d-none d-lg-inline-flex"
+                            onclick="openCartModal(); return false;" aria-label="Cart" title="Cart">
+                            <i class="bi bi-cart"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <span class="cart-count">0</span>
+                            </span>
+                        </a>
+                        <button class="theme-toggle ms-2 d-none d-lg-inline-flex" type="button">
+                            <i class="bi bi-sun"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="mobile-menu-overlay d-lg-none"></div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="main-bg py-4">
+        <div class="container">
+            <h2 class="mb-4">Checkout</h2>
+
+
+            <div class="card mb-4 checkout-summary-panel">
+                <div class="card-body">
+                    <div class="row align-items-stretch">
+                        <div class="col-lg-8">
+                            <h5 class="mb-3">Your Order</h5>
+                            <div id="orderItemsList" class="order-items-list">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex flex-column">
+                            <div class="order-summary-totals-wrapper">
+                                <div class="order-summary-totals">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Items subtotal:</span>
+                                        <span class="fw-bold" id="subtotal">$0</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span>Shipping:</span>
+                                        <span class="fw-bold" id="deliveryCost">$0</span>
+                                    </div>
+                                    <hr class="order-summary-divider">
+                                    <div class="d-flex justify-content-between total-row">
+                                        <h5 class="mb-0"><strong>Total:</strong></h5>
+                                        <h5 class="mb-0"><strong><span id="orderTotal" class="text-primary">$0</span></strong></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="checkoutForm">
+                <div class="row g-4">
+
+                    <div class="col-lg-4">
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">
+                                    <i class="bi bi-person-fill text-primary me-2"></i>
+                                    Customer Information
+                                </h5>
+                                <div class="mb-3">
+                                    <label for="firstName" class="form-label">First Name <span
+                                            class="text-danger required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your first name.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastName" class="form-label">Last Name <span
+                                            class="text-danger required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your last name.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactInfo" class="form-label">Email or Telegram (@username) <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="contactInfo" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your email or Telegram username.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4" id="deliveryAddressColumn">
+
+                        <div class="card mb-4" id="deliveryAddressPanel">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">
+                                    <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                    Shipping Address
+                                </h5>
+                                <div class="mb-3">
+                                    <label for="country" class="form-label">Country <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="country" name="country"
+                                        autocomplete="country-name" placeholder="Enter your country" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your country.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="region" class="form-label">State / Region <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="region" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your state or region.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="city" class="form-label">City <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="city" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your city.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="postalCode" class="form-label">ZIP / Postal Code</label>
+                                    <input type="text" class="form-control" id="postalCode">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Street Address <span
+                                            class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="address" rows="2" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter your street address.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4">
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">
+                                    <i class="bi bi-credit-card-fill text-primary me-2"></i>
+                                    Payment Method
+                                </h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cryptoPayment"
+                                        value="crypto" checked>
+                                    <label class="form-check-label" for="cryptoPayment">
+                                        <i class="bi bi-currency-bitcoin me-1"></i>
+                                        Pay with Cryptocurrency
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">
+                                    <i class="bi bi-truck text-primary me-2"></i>
+                                    Delivery Method
+                                </h5>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="deliveryMethod" id="freeDelivery"
+                                        value="free" checked>
+                                    <label class="form-check-label" for="freeDelivery">
+                                        <i class="bi bi-box-seam me-1"></i>
+                                        Physical Shipping<br>
+                                        <small class="text-muted">(Bank cards)</small>
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="deliveryMethod"
+                                        id="virtualDelivery" value="virtual">
+                                    <label class="form-check-label" for="virtualDelivery">
+                                        <i class="bi bi-cloud-arrow-down me-1"></i>
+                                        Digital Delivery<br>
+                                        <small class="text-muted">(Bank accounts, prepaid cards, e-wallets, accounts, and software)</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg checkout-submit-btn">
+                                <i class="bi bi-credit-card me-2"></i>
+                                Continue to Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <div id="cryptoPaymentPanel" class="crypto-payment-panel" style="display: none;">
+                <div class="container">
+                    <h2 class="mb-4 text-center">Pay with Cryptocurrency</h2>
+
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-8">
+                            <div class="card payment-card">
+                                <div class="card-body p-4">
+
+                                    <div class="payment-summary mb-4">
+                                        <h5 class="mb-3">Payment Amount</h5>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-muted">Total in USD:</span>
+                                            <h4 class="mb-0 text-primary">$<span id="paymentTotalUsd">0</span></h4>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="text-muted">Total in cryptocurrency:</span>
+                                            <h4 class="mb-0 crypto-amount"><span id="paymentTotalCrypto">0</span> <span
+                                                    id="cryptoSymbol"></span></h4>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div id="rateStatus" class="mb-3">
+                                        <div class="alert alert-warning d-flex align-items-center">
+                                            <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                                            <span>Loading current exchange rates...</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="crypto-selection mb-4">
+                                        <h5 class="mb-3">Choose a Cryptocurrency</h5>
+                                        <div class="crypto-grid">
+                                            <div class="crypto-option" data-crypto="USDT" data-name="Tether">
+                                                <img src="images/icon/usdt.webp" alt="USDT" class="crypto-icon-img">
+                                                <div class="crypto-name">USDT</div>
+                                                <div class="crypto-network">TRC-20</div>
+                                            </div>
+                                            <div class="crypto-option" data-crypto="BTC" data-name="Bitcoin">
+                                                <img src="images/icon/btc.webp" alt="Bitcoin" class="crypto-icon-img">
+                                                <div class="crypto-name">Bitcoin</div>
+                                                <div class="crypto-network">BTC</div>
+                                            </div>
+                                            <div class="crypto-option" data-crypto="ETH" data-name="Ethereum">
+                                                <img src="images/icon/eth.webp" alt="Ethereum" class="crypto-icon-img">
+                                                <div class="crypto-name">Ethereum</div>
+                                                <div class="crypto-network">ERC-20</div>
+                                            </div>
+                                            <div class="crypto-option" data-crypto="USDC" data-name="USD Coin">
+                                                <img src="images/icon/usdc.png" alt="USDC" class="crypto-icon-img">
+                                                <div class="crypto-name">USDC</div>
+                                                <div class="crypto-network">ERC-20</div>
+                                            </div>
+                                            <div class="crypto-option" data-crypto="BNB" data-name="Binance Coin">
+                                                <img src="images/icon/bnb.webp" alt="BNB" class="crypto-icon-img">
+                                                <div class="crypto-name">BNB</div>
+                                                <div class="crypto-network">BEP-20</div>
+                                            </div>
+                                            <div class="crypto-option" data-crypto="XMR" data-name="Monero">
+                                                <img src="images/icon/xmr.webp" alt="Monero" class="crypto-icon-img">
+                                                <div class="crypto-name">Monero</div>
+                                                <div class="crypto-network">XMR</div>
+                                            </div>
+                                            <div class="crypto-option" data-crypto="SOL" data-name="Solana">
+                                                <img src="images/icon/solana-color.png" alt="Solana" class="crypto-icon-img">
+                                                <div class="crypto-name">Solana</div>
+                                                <div class="crypto-network">SOL</div>
+                                            </div>
+                                            <div class="crypto-option" data-crypto="TON" data-name="GRAM (TON)">
+                                                <img src="images/icon/ton.webp" alt="GRAM (TON)" class="crypto-icon-img">
+                                                <div class="crypto-name">GRAM</div>
+                                                <div class="crypto-network">TON</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="paymentDetails" class="payment-details" style="display: none;">
+                                        <hr>
+                                        <h5 class="mb-3">Payment Details</h5>
+
+                                        <div class="wallet-address-container mb-4">
+                                            <label class="form-label fw-bold" for="walletAddress">Wallet Address</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control wallet-address"
+                                                    id="walletAddress" readonly>
+                                                <button class="btn btn-outline-primary copy-btn" type="button"
+                                                    onclick="copyWalletAddress()">
+                                                    <i class="bi bi-clipboard"></i> <span
+                                                        class="copy-btn-text">Copy</span>
+                                                </button>
+                                            </div>
+                                            <small class="text-muted">Send the exact amount to the address above.</small>
+                                        </div>
+
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                            Important: Send the exact amount <strong><span
+                                                    id="exactAmount"></span></strong> to avoid payment processing delays.
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button class="btn btn-success btn-lg px-5 payment-confirm-btn" onclick="confirmPayment()">
+                                                <i class="bi bi-check-circle me-2"></i>
+                                                I have paid
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="processingPanel" class="processing-panel" style="display: none;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-6">
+                            <div class="card processing-card text-center">
+                                <div class="card-body p-5">
+                                    <div class="processing-animation mb-4">
+                                        <div class="spinner-border text-primary" role="status"
+                                            style="width: 4rem; height: 4rem;">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="mb-3" id="processingTitle">Order Processing</h3>
+                                    <p class="text-muted mb-4">
+                                        Your payment is being confirmed on the blockchain. This may take a few minutes
+                                        to an hour, depending on network activity.
+                                    </p>
+                                    <div class="alert alert-info">
+                                        <i class="bi bi-info-circle me-2"></i>
+                                        We’ll notify you at the contact information you provided once your payment is
+                                        confirmed.
+                                    </div>
+                                    <div class="processing-details mt-4">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="text-muted">Amount:</span>
+                                            <strong><span id="processingAmount"></span></strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="text-muted">Cryptocurrency:</span>
+                                            <strong><span id="processingCrypto"></span></strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">Contact:</span>
+                                            <strong><span id="processingContact"></span></strong>
+                                        </div>
+                                    </div>
+                                    <hr class="my-4">
+                                    <button class="btn btn-outline-primary return-home-btn" onclick="window.location.href='index.html'">
+                                        <i class="bi bi-house me-2"></i>
+                                        Return to Home
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer-bg text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>CardGem</h5>
+                    <p>Your digital essentials, all in one place.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="mb-2">
+                        <a href="faq.html" class="text-light text-decoration-none me-3">FAQ</a>
+                        <a href="guarantees.html" class="text-light text-decoration-none me-3">Guarantees</a>
+                        <a href="mailto:CardGem.support@protonmail.com" class="text-light text-decoration-none">CardGem.support@protonmail.com</a>
+                    </div>
+                    <p>&copy; 2022 CardGem</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="favoritesModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-heart-fill text-danger me-2"></i>
+                    Favorites
+                </h5>
+                <button type="button" class="modal-close" onclick="closeFavoritesModal()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="favoritesContent">
+                    <div class="empty-state">
+                        <i class="bi bi-heart text-muted"></i>
+                        <p>Your favorites list is empty</p>
+                        <small class="text-muted">Save products here so you can find them later.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="cartModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-cart-fill text-primary me-2"></i>
+                    Cart
+                </h5>
+                <button type="button" class="modal-close" onclick="closeCartModal()" aria-label="Close cart">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="cartContent">
+                    <div class="empty-state">
+                        <i class="bi bi-cart text-muted"></i>
+                        <p>Your cart is empty</p>
+                        <small class="text-muted">Add products to your cart to get started.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">$0</span></strong>
+                </div>
+                <button type="button" class="btn btn-primary btn-checkout" disabled>
+                    Continue to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+
+</html>
