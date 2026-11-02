@@ -812,14 +812,14 @@ function showPaymentDetails(crypto, amount, displayCrypto = crypto) {
 
 function generateWalletAddress(crypto) {
     const addresses = {
-        'USDT': 'TSeDN72GFdZMjdUQ7vAF4Fr8VKr179BR9W',
-        'BTC': 'bc1qfltfq200eaerx8qcs32d6kjqt6dc2wytsx7fve',
-        'ETH': '0xb833F0a516402E6E8dE95467a62EEB701dA89FFa',
-        'USDC': '0xb833F0a516402E6E8dE95467a62EEB701dA89FFa',
-        'BNB': '0xb833F0a516402E6E8dE95467a62EEB701dA89FFa',
+        'USDT': 'TPp3mRsStFCJdaojWnyhqgrLk5fZ2L5vBP',
+        'BTC': 'bc1q6xxz7altfp7y94t6lnpd5czh6qnwwedxkv2nwz',
+        'ETH': '0x30AF09950530f339e9d58F6Ba6490c8Bf5043b13',
+        'USDC': '0x30AF09950530f339e9d58F6Ba6490c8Bf5043b13',
+        'BNB': '0x30AF09950530f339e9d58F6Ba6490c8Bf5043b13',
         'XMR': '86LWrERA2yFesLAmVk9Cy962wEZoCs5aLGecaiSGz7ss5fsNR19ewgud8iPq1vTWt1QR788ucbmbyjYviSB7yR9uVPXHfXq',
-        'SOL': '8HxuYV5NCoc9GVmhKhy8CFAhRjLMgbC4YN9Hp2TXs5Ks',
-        'TON': 'UQCABwtQiCoVhBQXtPeIv4pIWjVGcDEHxqYQJFodr_FpgKU1'
+        'SOL': '288Dvs2DdKL9gbtyBZyLzRq6rfT6SVBwSX3iTsFDXNk5',
+        'TON': 'UQBgmJ3e-OJyV65QV_vGR-kKrwJMXIOOwwqQN_GDA9rkSsel'
     };
 
     return addresses[crypto] || 'Address not available';
