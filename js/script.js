@@ -307,7 +307,7 @@ function getHomeProductName(product, forceEnglish = false) {
         244: "Verified Stripe Account",
         301: "NordVPN Premium Complete Account | 1 Year",
         302: "Dedicated Proxy Service",
-        303: "Binance Account with $1,000+ Crypto Balance | Full Access",
+        303: "Binance Account with $1,000+ Crypto Balance",
         304: "Coinbase Account with $1,200-$2,000 Balance",
         305: "Bybit Account with $500-$1,000 Balance",
         306: "Verified Kraken Account",
